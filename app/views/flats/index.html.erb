@@ -12,8 +12,8 @@
               <div class="card-body">
                 <h3 class="card-title"><%= link_to flat.name, flat_path(flat) %></h3>
                 <h5 class="card-text"><%= flat.address.capitalize %></h5>
-                <p class="card-text"><strong>$ </strong><%= flat.price_per_night %></p>
-                <p class="card-text"><%= flat.number_of_guests %> people</p>
+                <p class="card-text"><i class="fas fa-dollar-sign"></i> <%= flat.price_per_night %></p>
+                <p class="card-text"><%= flat.number_of_guests %> <i class="fas fa-user-friends"></i> </p>
                 <p class="card-text"><%= flat.description %></p>
               </div>
               <%= link_to 'More Info', flat_path(flat), class: 'btn btn-primary'  %>
