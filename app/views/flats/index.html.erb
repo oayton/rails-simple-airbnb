@@ -1,0 +1,28 @@
+<br>
+
+<h1> All Our Flats</h1>
+
+<p>All 2 flats.</p>
+
+  <div class="container">
+      <div class="cards-grid">
+        <% @flats.each do |flat| %>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="<%= flat.picture_url %>" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="card-title"><%= link_to flat.name, flat_path(flat) %></h3>
+                <h5 class="card-text"><%= flat.address.capitalize %></h5>
+                <p class="card-text"><strong>$ </strong><%= flat.price_per_night %></p>
+                <p class="card-text"><%= flat.number_of_guests %> people</p>
+                <p class="card-text"><%= flat.description %></p>
+              </div>
+              <%= link_to 'More Info', flat_path(flat), class: 'btn btn-primary'  %>
+              <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-primary' %>
+              <%= link_to 'Delete', flat_path(flat),
+                  method: :delete,
+                  data: {confirm: 'Are you sure deleting this restaurant?'}, class: 'btn btn-danger'  %>
+            </div>
+      <% end %>
+    </div>
+
+  </div>
